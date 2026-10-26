@@ -1,0 +1,10 @@
+based on this project brief, I want to create 
+
+    the detailed system design architecture (the block consist of the User Device (PWA), Laptop (Mock Cloud Server), ESP32, and all needed arrow to represent the data). I need the detailed diagram, including the arrow detailed information
+    the detailed Edge AI Flow, starting from the raw data until it produce a processed data that ready to be send to the Laptop Mock Cloud Server
+
+Now, generate needed block diagram for this! please make it good and comprehensive and no AI Slop (make it based on what I gave you)
+
+and please generate the block diagram for in a Landscape mode, because I want to put it in a white background 16:9 PPT Slide!
+
+Generate the final output into a transparent background block diagram and export it as either SVG or PNG!
