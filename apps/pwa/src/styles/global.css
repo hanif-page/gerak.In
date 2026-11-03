@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+:root {
+  font-family: 'Inter Variable', Inter, system-ui, sans-serif;
+  color: #813405;
+  background: #faf8f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --paper: #fff;
+  --ink: #813405;
+  --orange: #d45113;
+  --light-orange: #f9a03f;
+  --yellow: #f8dda4;
+  --green: #ddf9c1;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+button, a { touch-action: manipulation; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+h1, h2, p { margin: 0; }
+img { display: block; flex-shrink: 0; }
+
+.app-shell {
+  max-width: 414px;
+  min-height: 100svh;
+  margin-inline: auto;
+  padding-top: max(36px, env(safe-area-inset-top));
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+.brand-bar {
+  min-height: 48px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { color: var(--ink); text-decoration: none; font-size: 23px; font-weight: 800; letter-spacing: -.9px; }
+.brand-tagline { font-size: 10px; font-weight: 600; letter-spacing: .15px; }
+.dashboard { padding: 16px 24px 0; display: flex; flex: 1; flex-direction: column; gap: 24px; min-width: 0; }
+.dashboard:focus { outline: none; }
+.preview-area { padding: 24px 24px 0; }
+.tracker-heading, .card-heading, .calories-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+h1 { font-size: 24px; font-weight: 700; letter-spacing: -.65px; }
+.connection-badge { display: inline-flex; align-items: center; gap: 6px; border-radius: 100px; padding: 8px 12px; background: #f4f0e9; font-size: 12px; font-weight: 500; white-space: nowrap; }
+.connection-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+.mode-selector { min-height: 56px; padding: 4px; display: flex; flex-shrink: 0; gap: 4px; background: var(--yellow); border-radius: 100px; }
+.mode-option { display: flex; align-items: center; justify-content: center; flex: 1; min-width: 0; min-height: 48px; padding: 10px 8px; border: 0; border-radius: 100px; background: transparent; color: var(--ink); text-decoration: none; text-align: center; font-size: 14px; font-weight: 500; transition: background .15s ease; }
+.mode-option:hover:not(.is-selected) { background: #edcc8b; }
+.mode-option.is-selected { background: var(--orange); color: white; font-weight: 700; }
+.activity-card { display: flex; flex-direction: column; gap: 20px; padding: 24px; border-radius: 20px; background: var(--yellow); }
+.card-heading h2 { font-size: 14px; font-weight: 400; }
+.step-metric { font-size: clamp(40px, 14vw, 58px); font-weight: 900; letter-spacing: -2.2px; line-height: 1.2; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.metric-unit { font-size: 20px; font-weight: 600; letter-spacing: -.5px; }
+.metric-divider { height: 1px; background: rgb(129 52 5 / 15%); }
+.calorie-metric { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.2; }
+.calorie-unit { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
+.metric-label { margin-top: 5px; font-size: 12px; line-height: 1.5; }
+.sensor-card { display: flex; flex-direction: column; gap: 18px; padding: 20px; background: var(--paper); border: 1px solid var(--yellow); border-radius: 16px; }
+.sensor-card h2 { font-size: 12px; font-weight: 600; }
+.current-activity { display: flex; align-items: center; gap: 12px; min-height: 44px; font-size: 15px; font-weight: 600; line-height: 1.45; }
+.activity-indicator { position: relative; width: 24px; height: 24px; display: grid; place-items: center; flex-shrink: 0; }
+.activity-indicator span { height: 10px; width: 10px; border-radius: 50%; background: var(--green); border: 1px solid var(--ink); }
+.activity-indicator.is-walking { background: rgb(249 160 63 / 25%); border-radius: 50%; }
+.activity-indicator.is-walking span { border-color: var(--orange); background: var(--orange); }
+.activity-indicator.is-walking::before { content: ''; position: absolute; inset: 0; border: 1px solid var(--light-orange); border-radius: 50%; animation: walking-pulse 2s ease-out infinite; }
+@keyframes walking-pulse { from { transform: scale(.65); opacity: .8; } to { transform: scale(1.25); opacity: 0; } }
+.sensor-caption { font-size: 10px; line-height: 1.5; }
+.activity-preview { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 11px; }
+.activity-preview > span { color: #795840; }
+.activity-preview > div { display: flex; gap: 4px; }
+.activity-preview a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border-radius: 100px; color: var(--ink); text-decoration: none; }
+.activity-preview a[aria-current='true'] { background: #f5eddf; font-weight: 700; }
+.preview-note { font-size: 12px; line-height: 1.65; }
+.preview-label { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.3px; margin-bottom: 5px; }
+.preview-note p { color: #795840; }
+.offline-message { margin-top: 8px; font-weight: 600; }
+.app-footer { padding: 24px 24px max(28px, env(safe-area-inset-bottom)); text-align: center; color: #795840; font-size: 10px; letter-spacing: .2px; }
+
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 10; padding: 12px; background: white; color: var(--ink); border-radius: 8px; }
+.skip-link:focus { top: 16px; }
+.bottom-action { margin-top: auto; padding-top: 14px; }
+.primary-button, .outline-button { display: flex; align-items: center; justify-content: center; min-height: 60px; width: 100%; padding: 14px 18px; border: 0; border-radius: 100px; background: var(--orange); color: white; font-weight: 700; font-size: 16px; line-height: 1.4; text-decoration: none; text-align: center; }
+.primary-button:hover { background: #b8420d; }
+.outline-button { border: 2px solid var(--ink); background: white; color: var(--ink); }
+.outline-button:hover { background: #fff9ed; }
+.pwa-notice { position: fixed; z-index: 5; bottom: max(16px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); width: min(382px, calc(100% - 32px)); padding: 20px; border: 1px solid var(--yellow); border-radius: 16px; background: white; box-shadow: 0 8px 32px rgb(69 33 12 / 12%); font-size: 13px; line-height: 1.6; }
+.notice-actions { display: flex; gap: 12px; margin-top: 12px; }
+.notice-actions button { min-height: 44px; padding: 8px 20px; border: 1px solid var(--yellow); border-radius: 100px; background: var(--yellow); color: var(--ink); font-size: 13px; font-weight: 600; }
+
+@media (min-width: 600px) {
+  .app-shell { min-height: max(860px, 100svh); border-inline: 1px solid #eee5d8; }
+}
+@media (max-width: 340px) {
+  .dashboard, .preview-area { padding-inline: 16px; }
+  .brand-bar { padding-inline: 16px; }
+  .activity-card { padding: 20px; }
+  .connection-badge { font-size: 11px; padding-inline: 10px; }
+  .metric-unit { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
