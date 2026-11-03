@@ -1,0 +1,13 @@
+# Copy next to the manually created project's platformio.ini.
+# These paths assume the environment is named [env:esp32-c3-devkitm-1].
+# Change BOTH paths if you choose a different environment name.
+[wokwi]
+version = 1
+firmware = '.pio/build/esp32-c3-devkitm-1/firmware.bin'
+elf = '.pio/build/esp32-c3-devkitm-1/firmware.elf'
+
+# Optional: uncomment only when you need simulated serial access from Python.
+# rfc2217ServerPort = 4000
+
+# Outbound requests to the future backend do not require net.forward entries.
+# No backend URL, credential, license, or actual Wi-Fi password belongs here.
