@@ -9,3 +9,5 @@ coverage/
 .pio/
 .DS_Store
 npm-debug.log*
+
+model-training/mm-fit
