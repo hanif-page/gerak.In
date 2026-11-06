@@ -2,8 +2,8 @@ node_modules/
 dist/
 coverage/
 *.tsbuildinfo
-.env
-.env.*
+.venv
+.venv.*
 !.env.example
 *.local
 .pio/
